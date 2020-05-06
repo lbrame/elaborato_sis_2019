@@ -1,0 +1,25 @@
+.model MUX5A
+.inputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0 S
+.outputs O4 O3 O2 O1 O0
+
+.subckt REGISTRO5 A4=A4 A3=A3 A2=A2 A1=A1 A0=A0
+.subckt UNO1 uscita4=B4 uscita3=B3 uscita2=B2 uscita1=B1 uscita0=B0
+.subckt COMPARATORE5A O=S
+
+# se il registro è pieno (S=1)
+.names S A4 B4 O4
+1-1 1
+
+.names S A3 B3 O3
+
+.names S A2 B2 O2
+
+.names S A1 B1 O1
+
+.names S A0 B0 O0
+
+.search uno1.blif
+.search registro5a.blif
+.search comparatore5a.blif
+
+.end

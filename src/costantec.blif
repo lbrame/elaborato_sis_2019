@@ -1,0 +1,7 @@
+.model COSTANTEC
+.outputs uscita4 uscita3 uscita2 uscita1 uscita0
+
+.names uscita4 uscita3 uscita2 uscita1 uscita0
+01100
+
+.end
