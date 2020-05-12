@@ -1,8 +1,0 @@
-.model COSTANTEABREG
-.inputs A4 A3 A2 A1 A0
-.outputs 04 03 02 01 O0
-
-.names A4 A3 A2 A1 AO 
-.names 
-
-.end
