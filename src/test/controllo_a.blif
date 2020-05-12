@@ -1,0 +1,16 @@
+.model CONTROLLOA
+.inputs A4 A3 A2 A1 A0
+.outputs O4 O3 O2 O1 O0 OUTA
+
+# Input registro = A
+# Input costante = B
+
+.subckt REGISTRO5A A4=A4 A3=A3 A2=A2 A1=A1 A0=A0
+.subckt COSTANTEAB O4=C4 O3=C3 O2=C2 O1=C1 O0=C0
+.subckt CONTROLLO A4=A4 A3=A3 A2=A2 A1=A1 A0=A0 B4=C4 B3=C3 B2=C2 B1=C1 B0=C0 O4=O4 O3=O3 O2=02 O1=O1 O0=O0 OUT=OUTA
+
+.search registro5a.blif
+.search costanteab.blif
+.search controllo.blif
+
+.end
