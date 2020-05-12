@@ -19,3 +19,5 @@
 .search xor.blif
 
 .end
+
+# se reg > cost, output 1

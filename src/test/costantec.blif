@@ -2,13 +2,13 @@
 .outputs O4 O3 O2 O1 O0
 
 .names O4
-0
+1
 
 .names O3
 1
 
 .names O2
-1
+0
 
 .names O1
 0
