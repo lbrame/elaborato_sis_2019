@@ -1,4 +1,4 @@
-.model sommatore
+.model SOMMATORE
 .inputs A B CIN
 .outputs O COUT
 

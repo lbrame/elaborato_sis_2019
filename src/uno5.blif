@@ -1,0 +1,19 @@
+.model UNO5
+.outputs UNO4 UNO3 UNO2 UNO1 UNO0
+
+.names UNO4
+0
+
+.names UNO3
+0
+
+.names UNO2
+0
+
+.names UNO1
+0
+
+.names UNO0
+1
+
+.end

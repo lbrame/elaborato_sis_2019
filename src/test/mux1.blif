@@ -1,0 +1,11 @@
+# Multiplexer a 2 ingressi da 1 bit ciascuno
+
+.model MUX
+.inputs A B S
+.outputs C
+
+.names S A B C
+1-0 0
+01- 0
+
+.end
