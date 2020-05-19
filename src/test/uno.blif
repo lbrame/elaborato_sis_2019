@@ -1,7 +1,7 @@
-.model UNO
-.outputs UNO 
+.model UNO 
+.outputs UNO
 
-.names UNO
+.names UNO 
 1
 
 .end

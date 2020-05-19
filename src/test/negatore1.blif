@@ -1,0 +1,8 @@
+.model NEGATORE1
+.inputs A
+.outputs OUT
+
+.names A OUT
+0 1
+
+.end

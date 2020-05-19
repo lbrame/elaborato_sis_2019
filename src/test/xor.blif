@@ -1,9 +1,14 @@
 .model XOR
-.inputs A B
+.inputs A1 A0
 .outputs OUT
 
-.names A B OUT
+.names A1 A0 OUT
 01 1
 10 1
 
 .end
+
+# 00|0
+# 01|1
+# 10|1
+# 11|0

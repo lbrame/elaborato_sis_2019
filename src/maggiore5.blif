@@ -2,11 +2,11 @@
 .inputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0
 .outputs OUT
 
-.subckt XOR A=A4 B=B4 OUT=C4
-.subckt XOR A=A3 B=B3 OUT=C3
-.subckt XOR A=A2 B=B2 OUT=C2
-.subckt XOR A=A1 B=B1 OUT=C1
-.subckt XOR A=A0 B=B0 OUT=C0
+.subckt XOR A1=A4 A0=B4 OUT=C4
+.subckt XOR A1=A3 A0=B3 OUT=C3
+.subckt XOR A1=A2 A0=B2 OUT=C2
+.subckt XOR A1=A1 A0=B1 OUT=C1
+.subckt XOR A1=A0 A0=B0 OUT=C0
 
 .names A4 A3 A2 A1 A0 C4 C3 C2 C1 C0 OUT
 1----1---- 1
@@ -14,8 +14,7 @@
 --1--001-- 1
 ---1-0001- 1
 ----100001 1
-
-
-.search xor.blif
-
 .end
+.search xor.blif
+#1 1 1 1 0
+#1 0 1 1 1
