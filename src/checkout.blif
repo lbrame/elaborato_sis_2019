@@ -1,0 +1,14 @@
+.model CHECK_OUT
+.inputs OUT SELA SELB SELC 
+.outputs DA DB DC
+
+.names OUT SELA DA
+11 1
+
+.names OUT SELB DB
+11 1
+
+.names OUT SELC DC
+11 1
+
+.end

@@ -1,18 +1,15 @@
 .model SOMMATORE
 .inputs A B CIN
-.outputs O COUT
+.outputs OUT COUT
 
 .names A B K
 10 1
 01 1
-
-.names K CIN O
+.names K CIN OUT
 10 1
 01 1
-
 .names A B CIN COUT
 11- 1
 1-1 1
 -11 1
-
 .end

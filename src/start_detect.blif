@@ -1,0 +1,11 @@
+.model START_DETECT
+.inputs IO
+.outputs RESET
+
+.subckt REGISTRO1 A=IO OUT=OLD
+.names OLD IO RESET
+01 1
+
+.end
+
+.search registro1.blif

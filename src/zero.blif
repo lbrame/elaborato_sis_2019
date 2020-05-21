@@ -1,6 +1,7 @@
 .model ZERO
 .outputs ZERO
 
-.names ZERO
+.names ZERO 
+0
 
 .end

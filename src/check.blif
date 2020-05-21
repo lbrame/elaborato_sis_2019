@@ -1,0 +1,22 @@
+.model CHECK
+.inputs IN OUT SELA SELB SELC FA FB FC
+.outputs IA IB IC DA DB DC OUTA OUTB OUTC INO OUTO
+
+.subckt CHECK_IN IN=IN SELA=SELA SELB=SELB SELC=SELC FA=FA FB=FB FC=FC INA=IA INB=IB INC=IC
+.subckt CHECK_OUT OUT=OUT SELA=SELA SELB=SELB SELC=SELC DA=DA DB=DB DC=DC 
+
+.names SELA OUTA
+1 1
+.names SELB OUTB
+1 1
+.names SELC OUTC
+1 1
+
+.names IN INO
+1 1
+.names OUT OUTO
+1 1
+
+
+.search checkin.blif
+.search checkout.blif

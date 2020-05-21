@@ -1,9 +1,0 @@
-.model XNOR
-.inputs A B
-.outputs C
-
-.names A B C
-11 1
-00 1
-
-.end
