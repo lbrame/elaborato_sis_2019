@@ -1,8 +1,0 @@
-.model FSMD
-.inputs I4 I3 I2 I1 I0
-.outputs O6 O5 O4 O3 O2 O1 O0
-
-
-.end
-.search fsm.blif
-.search datapath.blif

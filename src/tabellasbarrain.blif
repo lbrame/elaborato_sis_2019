@@ -1,0 +1,12 @@
+.model TABELLASBARRAIN
+.inputs REG IN SELA SELB SELC FA FB FC
+.outputs SBARRA
+
+.names REG IN SELA SELB SELC FA FB FC SBARRA
+
+1------- 0
+011--1-- 0
+01-1--1- 0
+01--1--1 0
+00------ 0
+.end
