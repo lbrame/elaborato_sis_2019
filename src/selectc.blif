@@ -1,0 +1,13 @@
+.model SELECTC
+.outputs A2 A1 A0
+
+.names A2
+0
+
+.names A1
+0
+
+.names A0
+1
+
+.end

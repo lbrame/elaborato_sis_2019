@@ -8,6 +8,7 @@
 .p 7
 .s 5
 .r OFF
+#STG-START
 0-------- OFF     OFF    00000
 -0------- OFF     OFF    00000
 --0------ OFF     OFF    00000
@@ -27,5 +28,6 @@
 10100---- EVAL    EVAL   01000
 10010---- EVAL    EVAL   01000
 10001---- EVAL    EVAL   01000
+#STG-STOP
 .end_kiss
 .end

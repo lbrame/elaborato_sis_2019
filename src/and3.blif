@@ -1,0 +1,11 @@
+.model AND3
+.inputs A2 A1 A0 B2 B1 B0
+.outputs TRUE
+
+.names A2 A1 A0 B2 B1 B0 TRUE
+100100 1
+010010 1
+001001 1
+
+.end
+

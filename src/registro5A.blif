@@ -9,3 +9,4 @@
 .subckt REGISTRO A=A0 O=O0 
 .end
 .search registro1.blif
+

@@ -1,4 +1,4 @@
-.model REGISTRO5A
+.model REGISTRO5C
 .inputs A4 A3 A2 A1 A0
 .outputs O4 O3 O2 O1 O0
 
@@ -9,3 +9,4 @@
 .subckt REGISTRO A=A0 O=O0 
 .end
 .search registro1.blif
+
