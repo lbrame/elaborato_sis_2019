@@ -1,0 +1,37 @@
+.model FSM
+.inputs O4 O3 O2 O1 O0 GO FA FB FC
+.outputs SBI SBO START_A START_B START_C
+.start_kiss
+.i 9
+.o 5
+.p 20
+.s 4
+.r S2
+-----0--- S0 S0 00100
+-----1--- S0 S1 00010
+-----0--- S1 S0 00100
+-----1--- S1 S3 00001
+00000---- S3 S2 00000
+01100-0-- S3 S3 10000
+01010--0- S3 S3 10000
+01001---0 S3 S3 10000
+01100-1-- S3 S3 00000
+01010--1- S3 S3 00000
+01001---1 S3 S3 00000
+10100---- S3 S3 01000
+10010---- S3 S3 01000
+10001---- S3 S3 01000
+0-------- S2 S2 00000
+-0------- S2 S2 00000
+--0------ S2 S2 00000
+---0----- S2 S2 00000
+----0---- S2 S2 00000
+11111---- S2 S0 00000
+.end_kiss
+.latch_order
+.names SBI
+.names SBO
+.names START_A
+.names START_B
+.names START_C
+.end
