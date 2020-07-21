@@ -1,0 +1,11 @@
+.model CHECK_INCREMENTA
+.inputs A B
+.outputs C
+
+.names A B C
+11 0
+00 0
+10 0
+
+.end
+

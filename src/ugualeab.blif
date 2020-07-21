@@ -1,0 +1,11 @@
+.model UGUALEAB
+.inputs A4 A3 A2 A1 A0
+.outputs O
+
+.subckt COSTANTEAB O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+.names A4 A3 A2 A1 A0 O4 O3 O2 O1 O0 O
+1111111111 1
+
+.end
+.search costanteab.blif
+

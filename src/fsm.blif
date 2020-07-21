@@ -1,37 +1,293 @@
 .model FSM
-.inputs O4 O3 O2 O1 O0 GO FA FB FC
-.outputs SBI SBO START_A START_B START_C
+.inputs IN4 IN3 IN2 IN1 IN0 GO FA FB FC
+.outputs SBI SBO START_A START_B START_C INCA INCB INCC DECA DECB DECC
+.latch    [11] LatchOut_v9   1
+.latch    [12] LatchOut_v10   0
+.latch    [13] LatchOut_v11   0
 .start_kiss
 .i 9
-.o 5
-.p 20
-.s 4
-.r S2
------0--- S0 S0 00100
------1--- S0 S1 00010
------0--- S1 S0 00100
------1--- S1 S3 00001
-00000---- S3 S2 00000
-01100-0-- S3 S3 10000
-01010--0- S3 S3 10000
-01001---0 S3 S3 10000
-01100-1-- S3 S3 00000
-01010--1- S3 S3 00000
-01001---1 S3 S3 00000
-10100---- S3 S3 01000
-10010---- S3 S3 01000
-10001---- S3 S3 01000
-0-------- S2 S2 00000
--0------- S2 S2 00000
---0------ S2 S2 00000
----0----- S2 S2 00000
-----0---- S2 S2 00000
-11111---- S2 S0 00000
+.o 11
+.p 19
+.s 5
+.r OFF
+0-------- OFF OFF 00000000000
+-0------- OFF OFF 00000000000
+--0------ OFF OFF 00000000000
+---0----- OFF OFF 00000000000
+----0---- OFF OFF 00000000000
+11111---- OFF INIT_A 00000000000
+-----0--- INIT_A INIT_B 00100000000
+-----1--- INIT_B INIT_C 00010000000
+-----1--- INIT_C EVAL 00001000000
+00000---- EVAL OFF 00000000000
+01100-0-- EVAL EVAL 10000100000
+01010--0- EVAL EVAL 10000010000
+01001---0 EVAL EVAL 10000001000
+01100-1-- EVAL EVAL 00000000000
+01010--1- EVAL EVAL 00000000000
+01001---1 EVAL EVAL 00000000000
+10100---- EVAL EVAL 01000000100
+10010---- EVAL EVAL 01000000010
+10001---- EVAL EVAL 01000000001
 .end_kiss
-.latch_order
-.names SBI
-.names SBO
-.names START_A
-.names START_B
-.names START_C
+.latch_order LatchOut_v9 LatchOut_v10 LatchOut_v11
+.code OFF 100
+.code INIT_A 010
+.code INIT_B 101
+.code INIT_C 110
+.code EVAL 000
+.names IN4 IN3 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 [11]
+-------1 1
+-----01- 1
+0----10- 1
+-0---10- 1
+--0--10- 1
+---0-10- 1
+----010- 1
+--000-0- 1
+.names IN4 IN3 IN2 IN1 IN0 LatchOut_v10 LatchOut_v11 [12]
+------1 1
+111110- 1
+.names LatchOut_v9 LatchOut_v10 [13]
+01 1
+.names IN3 IN2 IN1 IN0 FA FB FC LatchOut_v9 LatchOut_v10 SBI
+11--0--00 1
+1-1--0-00 1
+1--1--000 1
+.names IN4 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 SBO
+11--00 1
+1-1-00 1
+1--100 1
+.names LatchOut_v9 LatchOut_v10 START_A
+01 1
+.names LatchOut_v11 START_B
+1 1
+.names LatchOut_v9 LatchOut_v10 START_C
+11 1
+.names IN3 IN2 FA LatchOut_v9 LatchOut_v10 INCA
+11000 1
+.names IN3 IN1 FB LatchOut_v9 LatchOut_v10 INCB
+11000 1
+.names IN3 IN0 FC LatchOut_v9 LatchOut_v10 INCC
+11000 1
+.names IN4 IN2 LatchOut_v9 LatchOut_v10 DECA
+1100 1
+.names IN4 IN1 LatchOut_v9 LatchOut_v10 DECB
+1100 1
+.names IN4 IN0 LatchOut_v9 LatchOut_v10 DECC
+1100 1
+.exdc 
+.inputs IN4 IN3 IN2 IN1 IN0 GO FA FB FC LatchOut_v9 LatchOut_v10 LatchOut_v11
+.outputs [11] [12] [13] SBI SBO START_A START_B START_C INCA INCB INCC DECA \
+DECB DECC
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [11]
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [12]
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [13]
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 SBI
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 SBO
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 START_A
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 START_B
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 START_C
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 INCA
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 INCB
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 INCC
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 DECA
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 DECB
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 DECC
+-----0--1 1
+------0-1 1
+-------11 1
+-----011- 1
+-----101- 1
+11----00- 1
+--11--00- 1
+--1-1-00- 1
+---11-00- 1
+001---00- 1
+00-1--00- 1
+00--1-00- 1
+1-000-00- 1
+-1000-00- 1
 .end
