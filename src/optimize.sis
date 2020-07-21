@@ -1,8 +1,13 @@
 source fsm_update.sis
-read_blif fsmd_src.blif
+read_blif datapath.blif
+read_library synch.genlib
+map -s
 source script.rugged
+write_blif datapath_optimized.blif
+read_blif fsmd_src.blif
 write_blif fsmd.blif
 read_library synch.genlib
 map -s
+source script.rugged
 write_blif fsmd.blif
 read_blif fsmd.blif

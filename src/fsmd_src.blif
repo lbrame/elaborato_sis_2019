@@ -11,6 +11,6 @@
 .subckt FSM IN4=IN4 IN3=IN3 IN2=IN2 IN1=IN1 IN0=IN0 GO=GO FA=FAIN FB=FBIN FC=FCIN SBI=SBI SBO=SBO START_A=START_A START_B=START_B START_C=START_C INCA=INCA INCB=INCB INCC=INCC DECA=DECA DECB=DECB DECC=DECC
 
 .end
-.search datapath.blif
+.search datapath_optimized.blif
 .search registro1.blif
 .search fsm.blif
