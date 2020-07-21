@@ -1,0 +1,8 @@
+source fsm_update.sis
+read_blif fsmd_src.blif
+source script.rugged
+write_blif fsmd.blif
+read_library synch.genlib
+map -s
+write_blif fsmd.blif
+read_blif fsmd.blif

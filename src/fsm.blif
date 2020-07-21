@@ -1,9 +1,9 @@
 .model FSM
 .inputs IN4 IN3 IN2 IN1 IN0 GO FA FB FC
 .outputs SBI SBO START_A START_B START_C INCA INCB INCC DECA DECB DECC
-.latch    [99] LatchOut_v9   1
-.latch    [100] LatchOut_v10   0
-.latch    [101] LatchOut_v11   0
+.latch    [11] LatchOut_v9   1
+.latch    [12] LatchOut_v10   0
+.latch    [13] LatchOut_v11   0
 .start_kiss
 .i 9
 .o 11
@@ -44,57 +44,70 @@
 .code INIT_B 010
 .code INIT_C 111
 .code EVAL 101
-.names IN4 IN3 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 [99]
-0----1-- 1
--0-----0 1
---0----0 1
----0---0 1
-----0--0 1
-------10 1
-1----1-1 1
-.names LatchOut_v9 LatchOut_v10 LatchOut_v11 [100]
-0-1 1
--10 1
-.names IN4 IN3 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 [101]
-------11 1
-------10 1
-1----1-1 1
--1---1-1 1
---1--1-1 1
----1-1-1 1
-----11-1 1
-11111--0 1
-.names IN4 IN3 IN2 IN1 IN0 FA FB FC LatchOut_v9 LatchOut_v10 LatchOut_v11 SBI
-0110-0--101 1
-01-01--0101 1
-01010-0-101 1
-.names IN4 IN3 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 SBO
-1010-101 1
-10-01101 1
-10010101 1
+.names IN4 IN1 IN0 LatchOut_v9 START_A START_B [41] [44] [11]
+-----1-- 1
+------1- 1
+0--1---- 1
+-0--0--- 1
+--0-0--- 1
+----0--1 1
+.names START_A START_B [12]
+1- 1
+-1 1
+.names LatchOut_v10 [11] START_A [41] [42] [45] [13]
+1----- 1
+-00--- 1
+---11- 1
+---1-1 1
+.names INCA INCB INCC SBI
+1-- 1
+-1- 1
+--1 1
+.names DECA DECB DECC SBO
+1-- 1
+-1- 1
+--1 1
 .names LatchOut_v9 LatchOut_v11 START_A
 01 1
 .names LatchOut_v10 LatchOut_v11 START_B
 10 1
 .names LatchOut_v10 LatchOut_v11 START_C
 11 1
-.names IN4 IN3 IN2 IN1 FA LatchOut_v9 LatchOut_v10 LatchOut_v11 INCA
-01100101 1
-.names IN4 IN3 IN2 IN1 IN0 FB LatchOut_v9 LatchOut_v10 LatchOut_v11 INCB
-010100101 1
-.names IN4 IN3 IN1 IN0 FC LatchOut_v9 LatchOut_v10 LatchOut_v11 INCC
-01010101 1
-.names IN4 IN3 IN2 IN1 LatchOut_v9 LatchOut_v10 LatchOut_v11 DECA
-1010101 1
-.names IN4 IN3 IN2 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 DECB
-10010101 1
-.names IN4 IN3 IN1 IN0 LatchOut_v9 LatchOut_v10 LatchOut_v11 DECC
-1001101 1
+.names FA [40] [42] [44] INCA
+0100 1
+.names IN4 IN3 IN1 FB [40] [43] INCB
+011010 1
+.names IN3 IN0 FC [40] [42] INCC
+11010 1
+.names IN3 IN2 IN1 [46] DECA
+0101 1
+.names IN1 [45] [46] DECB
+101 1
+.names IN3 IN1 IN0 [46] DECC
+0011 1
+.names LatchOut_v9 LatchOut_v10 LatchOut_v11 [40]
+101 1
+.names LatchOut_v11 START_A [41]
+10 1
+.names IN4 IN1 [42]
+1- 1
+-1 1
+.names IN2 IN0 [43]
+1- 1
+-1 1
+.names IN3 IN2 [44]
+0- 1
+-0 1
+.names IN3 [43] [45]
+1- 1
+-1 1
+.names IN4 [40] [46]
+11 1
 .exdc 
 .inputs IN4 IN3 IN2 IN1 IN0 GO FA FB FC LatchOut_v9 LatchOut_v10 LatchOut_v11
-.outputs [99] [100] [101] SBI SBO START_A START_B START_C INCA INCB INCC DECA \
+.outputs [11] [12] [13] SBI SBO START_A START_B START_C INCA INCB INCC DECA \
 DECB DECC
-.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [99]
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [11]
 -----10-1 1
 -----0-11 1
 ------011 1
@@ -103,7 +116,7 @@ DECB DECC
 ------000 1
 0-101-101 1
 -0101-101 1
-.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [100]
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [12]
 -----10-1 1
 -----0-11 1
 ------011 1
@@ -112,7 +125,7 @@ DECB DECC
 ------000 1
 0-101-101 1
 -0101-101 1
-.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [101]
+.names IN4 IN3 IN2 IN1 IN0 GO LatchOut_v9 LatchOut_v10 LatchOut_v11 [13]
 -----10-1 1
 -----0-11 1
 ------011 1

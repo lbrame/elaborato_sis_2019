@@ -1,0 +1,5 @@
+read_blif fsm_proto_minimal.blif
+state_assign jedi
+# state_minimize stamina
+source script.rugged
+write_blif fsm.blif
